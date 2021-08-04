@@ -23,8 +23,7 @@ Product List
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <p class="card-text">New rows can be added to a DataTable very easily using the ( row.add() ) API method. Simply call the API function with the data that is to be used for the new row (be it an array or object). Multiple rows can be added using the ( rows.add() ) method (note the plural). Data can be likewise be updated with the ( row().data() and row().remove() methods. )
-                                        </p>
+                                       
                                         <a href="{{route('product.store')}}" id="addRow" class="btn btn-success mb-2"><i class="feather icon-plus"></i>&nbsp; Add new Product</a>
                                         <div class="table-responsive">
                                             <table class="table add-rows">
