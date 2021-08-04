@@ -76,7 +76,9 @@ Route::get('/view', [ProductController::class, 'ProductView'])->name('product.vi
  Route::post('/create',[ProductController::class,'ProductCreate'])->name('product.create');
 
 
-Route::get('/edit', [ProductController::class, 'ProductEdit'])->name('product.edit');
+Route::get('/edit/{pro_id}', [ProductController::class, 'ProductEdit'])->name('product.edit');
+
+Route::post('/update',[ProductController::class,'UpdateProduct'])->name('product.update');
 
 Route::get('/delete', [ProductController::class, 'ProductDelete'])->name('product.delete');
 

@@ -13,7 +13,7 @@ class ProductController extends Controller
     return view('backend.product.product_view',compact('products'));
     }
 
-
+    
 
     // // add Product
     public function ProductStore(){
@@ -61,12 +61,33 @@ class ProductController extends Controller
 
 
     // return to Edit Product view page
-    public function ProductEdit(){
+    public function ProductEdit($pro_id){
+        $products = Product::findOrFail($pro_id);
+        return view('backend.product.product_edit',compact('products'));
+    }//end method
 
-        return view('backend.product.product_edit');
-    }
+
+    // update exist product
+    public function UpdateProduct(Request $request){
+    $product_id=$request->id;
+    Product::findOrFail($product_id)->update([
+     'category_id'=>$request->category_id,
+        'user_id'=>$request->user_id,
+        'unicode'=>random_int(1000000, 9999999),
+        'slug'=>$request->slug,
+        'title'=>$request->title,
+        'description'=>$request->description,
+        'order'=>$request->order,
+        'status'=>$request->status,
+        'prc'=>$request->prc,
+        'cid'=>$request->cid,
 
 
+    ]);
+
+    return view('backend.product.product_view');
+
+    }// end exist product
 
 
      // Delete Product 

@@ -12,17 +12,127 @@ Edit Product
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form class="form form-horizontal">
+                                        <form class="form form-horizontal" method="post" action="{{route('product.update',$products->id)}}">
+                                             @csrf
+
+
+
+ <input type="hidden" name="id" value="{{ $products->id }}">   
                                             <div class="form-body">
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="form-group row">
                                                             <div class="col-md-4">
-                                                                <span>Product Name</span>
+                                                                <span>Category Name</span>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                    <input value="{{$products->category_id}}" type="text" id="fname-icon" class="form-control" name="category_id" placeholder="Product  Name">
+                                                                <div class="position-relative has-icon-left">
+                                                                    <div class="form-control-position">
+                                                                        <i class="feather icon-user"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-4">
+                                                                <span>User Name</span>
                                                             </div>
                                                             <div class="col-md-8">
                                                                 <div class="position-relative has-icon-left">
-                                                                    <input type="text" id="fname-icon" class="form-control" name="fname-icon" placeholder="Category Name">
+                                                                    <input value="{{$products->user_id}}" type="text" id="fname-icon" class="form-control" name="user_id" placeholder="User Name">
+                                                                    <div class="form-control-position">
+                                                                        <i class="feather icon-user"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-4">
+                                                                <span>Product Slug</span>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="position-relative has-icon-left">
+                                                                    <input value="{{$products->slug}}" type="text" id="fname-icon" class="form-control" name="slug" placeholder="Product slug">
+                                                                    <div class="form-control-position">
+                                                                        <i class="feather icon-user"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-4">
+                                                                <span>Product Title</span>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="position-relative has-icon-left">
+                                                                    <input value="{{$products->title}}" type="text" id="fname-icon" class="form-control" name="title" placeholder="Product Name">
+                                                                    <div class="form-control-position">
+                                                                        <i class="feather icon-user"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-4">
+                                                                <span>Product Description</span>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="position-relative has-icon-left">
+                                                                    <input value="{{$products->description}}" type="text" id="fname-icon" class="form-control" name="description" placeholder="Product  description">
+                                                                    <div class="form-control-position">
+                                                                        <i class="feather icon-user"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-4">
+                                                                <span>Product order</span>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="position-relative has-icon-left">
+                                                                    <input value="{{$products->order}}" type="text" id="fname-icon" class="form-control" name="order" placeholder="Product  order">
+                                                                    <div class="form-control-position">
+                                                                        <i class="feather icon-user"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-4">
+                                                                <span>Product status</span>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="position-relative has-icon-left">
+                                                                    <input value="{{$products->status}}" type="text" id="fname-icon" class="form-control" name="status" placeholder="Product  status">
+                                                                    <div class="form-control-position">
+                                                                        <i class="feather icon-user"></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                  <div class="col-12">
+                                                        <div class="form-group row">
+                                                            <div class="col-md-4">
+                                                                <span>Product price</span>
+                                                            </div>
+                                                            <div class="col-md-8">
+                                                                <div class="position-relative has-icon-left">
+                                                                    <input value="{{$products->prc}}" type="text" id="fname-icon" class="form-control" name="prc" placeholder="Product  price">
                                                                     <div class="form-control-position">
                                                                         <i class="feather icon-user"></i>
                                                                     </div>
@@ -34,11 +144,11 @@ Edit Product
                                                     <div class="col-12">
                                                         <div class="form-group row">
                                                             <div class="col-md-4">
-                                                                <span>Product Image</span>
+                                                                <span>Product extgange</span>
                                                             </div>
                                                             <div class="col-md-8">
                                                                 <div class="position-relative has-icon-left">
-                                                                    <input type="file" id="contact-icon" class="form-control" name="contact-icon" placeholder="Category Image">
+                                                                    <input type="text" id="contact-icon" value="{{$products->cid}}" class="form-control" name="cid" placeholder="Product  extgange">
                                                                     <div class="form-control-position">
                                                                         <i class="feather icon-smartphone"></i>
                                                                     </div>
