@@ -13,7 +13,7 @@ class ProductController extends Controller
     return view('backend.product.product_view',compact('products'));
     }
 
-    
+
 
     // // add Product
     public function ProductStore(){
@@ -91,9 +91,9 @@ class ProductController extends Controller
 
 
      // Delete Product 
-     public function ProductDelete(){
-
-     return "Product deleted succusfuly";
+     public function ProductDelete($pro_id){
+    Product::findOrFail($pro_id)->delete();
+     return view('backend.product.product_view');
      }
 
 }

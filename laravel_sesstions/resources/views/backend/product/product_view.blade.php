@@ -59,7 +59,7 @@ Product List
                                                         <th>
   <a href="{{route('product.edit',$pro->id)}}" class="btn btn-primary" title="Edit Data"><i class="fa fa-pencil"></i> </a>
 
- <a href="{{route('product.delete')}}" class="btn btn-danger" title="Delete Data" id="delete"><i class="fa fa-trash"></i></a>
+ <a href="{{route('product.delete',$pro->id)}}" class="btn btn-danger" title="Delete Data" id="delete"><i class="fa fa-trash"></i></a>
 
   
 

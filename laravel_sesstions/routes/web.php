@@ -80,7 +80,7 @@ Route::get('/edit/{pro_id}', [ProductController::class, 'ProductEdit'])->name('p
 
 Route::post('/update',[ProductController::class,'UpdateProduct'])->name('product.update');
 
-Route::get('/delete', [ProductController::class, 'ProductDelete'])->name('product.delete');
+Route::get('/delete/{pro_id}', [ProductController::class, 'ProductDelete'])->name('product.delete');
 
 });
 
