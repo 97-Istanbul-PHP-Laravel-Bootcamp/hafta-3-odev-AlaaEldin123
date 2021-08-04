@@ -73,6 +73,9 @@ Route::get('/view', [ProductController::class, 'ProductView'])->name('product.vi
 
  Route::get('/store', [ProductController::class, 'ProductStore'])->name('product.store');
 
+ Route::post('/create',[ProductController::class,'ProductCreate'])->name('product.create');
+
+
 Route::get('/edit', [ProductController::class, 'ProductEdit'])->name('product.edit');
 
 Route::get('/delete', [ProductController::class, 'ProductDelete'])->name('product.delete');

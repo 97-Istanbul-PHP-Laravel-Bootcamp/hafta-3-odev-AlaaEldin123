@@ -5,7 +5,7 @@
 Product List
 @endsection
 
-  
+
 
     <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/core/menu/menu-types/vertical-menu.cs')}}">
     
@@ -29,15 +29,33 @@ Product List
                                             <table class="table add-rows">
                                                 <thead>
                                                     <tr>
-                                                        <th>Product Name</th>
-                                                        <th>Product image</th>
+                                                        <th>Category Title</th>
+                                                        <th>User Name</th>
+                                                        <th>Product number</th>
+                                                         <th>Product slug</th>
+                                                        <th>Product title</th>
+                                                         <th>Product description</th>
+                                                        <th>Product order</th>
+                                                         <th>Product status</th>
+                                                         <th>Prodect price</th>
+                                                        <th>The Currency</th>
+
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+ @foreach($products as $pro)
                                                     <tr>
-                                                        <th>ALAA</th>
-                                                        <th>Product Img</th>
+                                                         <th>{{$pro->category_id}}</th>
+                                                        <th>{{$pro->user_id}}</th>
+                                                        <th>{{$pro->unicode}}</th>
+                                                         <th>{{$pro->slug}}</th>
+                                                        <th>{{$pro->title}}</th>
+                                                         <th>{{$pro->description}}</th>
+                                                        <th>{{$pro->order}}</th>
+                                                         <th>{{$pro->status}}</th>
+                                                         <th>{{$pro->prc}}</th>
+                                                        <th>{{$pro->cid}}</th>
                                                         <th>
   <a href="{{route('product.edit')}}" class="btn btn-primary" title="Edit Data"><i class="fa fa-pencil"></i> </a>
 
@@ -47,11 +65,22 @@ Product List
 
                                                         </th>
                                                     </tr>
+    @endforeach
+
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
-                                                      <th>Product Name</th>
-                                                        <th>Product image</th>
+                                                     <th>Category Title</th>
+                                                        <th>User Name</th>
+                                                        <th>Product number</th>
+                                                         <th>Product slug</th>
+                                                        <th>Product title</th>
+                                                         <th>Product description</th>
+                                                        <th>Product order</th>
+                                                         <th>Product status</th>
+                                                         <th>Prodect price</th>
+                                                        <th>The Currency</th>
+
                                                         <th>Action</th>
                                                     </tr>
                                                 </tfoot>
