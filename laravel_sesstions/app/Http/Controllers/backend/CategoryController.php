@@ -50,10 +50,30 @@ class CategoryController extends Controller
     } // end create new category
 
     // return to Edit Category view page
-    public function CategoryEdit(){
+    public function CategoryEdit($category_id){
 
-        return view('backend.category.category_edit');
+          $categories = Category::findOrFail($category_id);
+        return view('backend.category.category_edit',compact('categories'));
     }
+
+
+    // Start update category method
+    public function CategoryUpdate(Request $request){
+
+    $cat_id = $request->id;
+     
+
+    Category::findOrFail($cat_id)->update([
+        'title'=> $request->title,
+        'description'=>$request->description,
+        'slug'=>$request->slug,
+        'status'=>$request->status,
+    ]);
+        return redirect()->route('Category.view');
+
+    }// end update category
+
+
 
      // Delete Category 
      public function CategoryDelete(){
