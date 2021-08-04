@@ -47,7 +47,7 @@ Category List
                                                         <th>
   <a href="{{ route('category.edit',$category->id)}}" class="btn btn-primary" title="Edit Data"><i class="fa fa-pencil"></i> </a>
 
- <a href="{{ route('category.delete')}}" class="btn btn-danger" title="Delete Data" id="delete"><i class="fa fa-trash"></i></a>
+ <a href="{{ route('category.delete',$category->id)}}" class="btn btn-danger" title="Delete Data" id="delete"><i class="fa fa-trash"></i></a>
 
   
 

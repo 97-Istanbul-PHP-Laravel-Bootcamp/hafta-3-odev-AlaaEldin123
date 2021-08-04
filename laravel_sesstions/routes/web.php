@@ -60,7 +60,7 @@ Route::get('/edit/{category_id}', [CategoryController::class, 'CategoryEdit'])->
 
 Route::post('/update',[CategoryController::class,'CategoryUpdate'])->name('category.update');
 
-Route::get('/delete', [CategoryController::class, 'CategoryDelete'])->name('category.delete');
+Route::get('/delete/{category_id}', [CategoryController::class, 'CategoryDelete'])->name('category.delete');
 
 });
 

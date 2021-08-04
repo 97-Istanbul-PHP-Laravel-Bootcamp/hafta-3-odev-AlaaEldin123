@@ -76,9 +76,9 @@ class CategoryController extends Controller
 
 
      // Delete Category 
-     public function CategoryDelete(){
-
-     return "Category deleted succusfuly";
+     public function CategoryDelete($category_id){
+        Category::findOrFail($category_id)->delete();
+      return redirect()->route('Category.view');
      }
 
 }
