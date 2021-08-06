@@ -43,17 +43,17 @@
                     </ul>
                 </li>
 
-                <li class=" nav-item"><a href="#"><i class="feather icon-shopping-cart"></i><span class="menu-title" data-i18n="Ecommerce">Manage Sales</span></a>
+                <li class=" nav-item"><a href="#"><i class="feather icon-shopping-cart"></i><span class="menu-title" data-i18n="Ecommerce">Manage Cart</span></a>
                     <ul class="menu-content">
-                        <li><a href="{{route('sales.view')}}"><i class="feather icon-shopping-cart"></i><span class="menu-item" data-i18n="Shop">View Selles</span></a>
+                        <li><a href="{{route('cart.view')}}"><i class="feather icon-shopping-cart"></i><span class="menu-item" data-i18n="Shop">View Selles</span></a>
                         </li>                    
                      
                     </ul>
                 </li>
 
-                  <li class=" nav-item"><a href="#"><i class="feather icon-users"></i><span class="menu-title" data-i18n="Ecommerce">Manage Customers</span></a>
+                  <li class=" nav-item"><a href="#"><i class="feather icon-users"></i><span class="menu-title" data-i18n="Ecommerce">Manage User</span></a>
                     <ul class="menu-content">
-                        <li><a href="app-ecommerce-shop.html"><i class="feather icon-users"></i><span class="menu-item" data-i18n="Shop">View Customer</span></a>
+                        <li><a href="{{route('user.view')}}"><i class="feather icon-users"></i><span class="menu-item" data-i18n="Shop">View User</span></a>
                         </li>                    
                      
                     </ul>

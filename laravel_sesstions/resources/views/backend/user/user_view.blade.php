@@ -2,10 +2,10 @@
 @section('admin')
 
 @section('title')
-Sales List
+User List
 @endsection
 
-  
+
 
     <link rel="stylesheet" type="text/css" href="{{asset('backend/app-assets/css/core/menu/menu-types/vertical-menu.cs')}}">
     
@@ -19,39 +19,62 @@ Sales List
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">Sales Manage</h4>
+                                    <h4 class="card-title"> User</h4>
                                 </div>
                                 <div class="card-content">
                                     <div class="card-body">
                                        
-                                        <a href="{{route('sales.store')}}" id="addRow" class="btn btn-success mb-2"><i class="feather icon-plus"></i>&nbsp; Add new Sales</a>
+                                        <a href="{{route('user.register')}}" id="addRow" class="btn btn-success mb-2"><i class="feather icon-plus"></i>&nbsp; Add new User</a>
                                         <div class="table-responsive">
                                             <table class="table add-rows">
                                                 <thead>
+
                                                     <tr>
-                                                        <th>Sales Name</th>
-                                                        <th>Sales image</th>
+                                                        
+                                                        <th>User Name</th>
+                                                        <th>User Email</th>
+                                                         <th>Phone</th>
+                                                        <th>Status</th>
+                                                         <th>Create at</th>
+
                                                         <th>Action</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
+ @foreach($users as $user)
                                                     <tr>
-                                                        <th>ALAA</th>
-                                                        <th>Sales Img</th>
-                                                        <th>
-  <a href="{{route('sales.edit')}}" class="btn btn-primary" title="Edit Data"><i class="fa fa-pencil"></i> </a>
 
- <a href="{{route('sales.delete')}}" class="btn btn-danger" title="Delete Data" id="delete"><i class="fa fa-trash"></i></a>
+
+                                                          <th>{{$user->name}}</th>
+                                                        <th>{{$user->email}}</th>
+                                                         <th>{{$user->phone}}</th>
+                                                        <th>{{$user->status}}</th>
+                                                         <th>{{$user->create_at}}</th>
+
+                                                        <th>Action</th>
+                                                               
+
+                                                        
+                                                        <th>
+  <a href="" class="btn btn-primary" title="Edit Data"><i class="fa fa-pencil"></i> </a>
+
+ <a href="" class="btn btn-danger" title="Delete Data" id="delete"><i class="fa fa-trash"></i></a>
 
   
 
                                                         </th>
                                                     </tr>
+  @endforeach
+
                                                 </tbody>
                                                 <tfoot>
                                                     <tr>
-                                                      <th>Sales Name</th>
-                                                        <th>Sales image</th>
+                                                    <th>User Name</th>
+                                                        <th>User Email</th>
+                                                         <th>Phone</th>
+                                                        <th>Status</th>
+                                                         <th>Create at</th>
+
                                                         <th>Action</th>
                                                     </tr>
                                                 </tfoot>

@@ -54,7 +54,7 @@ class ProductController extends Controller
 
     ]);
 
-    return view('backend.product.product_view');
+    return redirect()->route('product.view');
 
     } // end creatre new Product
     

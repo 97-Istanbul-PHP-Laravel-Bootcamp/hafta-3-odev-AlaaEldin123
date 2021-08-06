@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\backend\ProductController;
-use App\Http\Controllers\backend\SalesController;
-
+use App\Http\Controllers\backend\CartController;
+use App\Http\Controllers\backend\UserController;
 
 
 /*
@@ -86,14 +86,49 @@ Route::get('/delete/{pro_id}', [ProductController::class, 'ProductDelete'])->nam
 
 
 // all Sales routes
-Route::prefix('sales')->group( function() {
+Route::prefix('cart')->group( function() {
 
-Route::get('/view', [SalesController::class, 'SalesView'])->name('sales.view');
+Route::get('/view', [CartController::class, 'CartView'])->name('cart.view');
 
- Route::get('/store', [SalesController::class, 'SalesStore'])->name('sales.store');
+ Route::get('/store', [CartController::class, 'CartStore'])->name('cart.store');
 
-Route::get('/edit', [SalesController::class, 'SalesEdit'])->name('sales.edit');
+Route::get('/edit', [CartController::class, 'CartEdit'])->name('cart.edit');
 
-Route::get('/delete', [SalesController::class, 'SalesDelete'])->name('sales.delete');
+Route::get('/delete', [CartController::class, 'CartDelete'])->name('cart.delete');
+
+});
+
+
+
+// all Cart routes
+Route::prefix('cart')->group( function() {
+
+Route::get('/view', [CartController::class, 'CartView'])->name('cart.view');
+
+ Route::get('/store', [CartController::class, 'CartStore'])->name('cart.store');
+
+Route::get('/edit', [CartController::class, 'CartEdit'])->name('cart.edit');
+
+Route::get('/delete', [CartController::class, 'CartDelete'])->name('cart.delete');
+
+});
+
+
+
+
+
+Route::prefix('user')->group( function() {
+
+
+Route::get('/view', [UserController::class, 'UserView'])->name('user.view');
+
+Route::get('/store', [UserController::class, 'User_register'])->name('user.register');
+
+Route::post('/create', [UserController::class, 'User_Create'])->name('user.create');
+
+Route::get('/edit', [UserController::class, 'UserEdit'])->name('user.edit');
+
+Route::get('/delete', [UserController::class, 'UserDelete'])->name('user.delete');
+
 
 });
