@@ -45,20 +45,20 @@ User List
                                                     <tr>
 
 
-                                                          <th>{{$user->name}}</th>
+                                                        <th>{{$user->name}}</th>
                                                         <th>{{$user->email}}</th>
-                                                         <th>{{$user->phone}}</th>
+                                                        <th>{{$user->phone}}</th>
                                                         <th>{{$user->status}}</th>
-                                                         <th>{{$user->create_at}}</th>
+                                                        <th>{{$user->created_at}}</th>
 
                                                         <th>Action</th>
                                                                
 
                                                         
                                                         <th>
-  <a href="" class="btn btn-primary" title="Edit Data"><i class="fa fa-pencil"></i> </a>
+  <a href="{{route('user.edit',$user->id)}}" class="btn btn-primary" title="Edit Data"><i class="fa fa-pencil"></i> </a>
 
- <a href="" class="btn btn-danger" title="Delete Data" id="delete"><i class="fa fa-trash"></i></a>
+ <a href="{{route('user.delete',$user->id)}}" class="btn btn-danger" title="Delete Data" id="delete"><i class="fa fa-trash"></i></a>
 
   
 

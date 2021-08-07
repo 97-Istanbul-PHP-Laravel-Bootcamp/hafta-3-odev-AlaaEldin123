@@ -117,18 +117,20 @@ Route::get('/delete', [CartController::class, 'CartDelete'])->name('cart.delete'
 
 
 
-Route::prefix('user')->group( function() {
+Route::prefix('customer')->group( function() {
 
 
-Route::get('/view', [UserController::class, 'UserView'])->name('user.view');
+Route::get('/user/view', [UserController::class, 'UserView'])->name('user.view');
 
-Route::get('/store', [UserController::class, 'User_register'])->name('user.register');
+Route::get('/user/store', [UserController::class, 'User_register'])->name('user.register');
 
-Route::post('/create', [UserController::class, 'User_Create'])->name('user.create');
+Route::post('/user/create', [UserController::class, 'User_Create'])->name('user.create');
 
-Route::get('/edit', [UserController::class, 'UserEdit'])->name('user.edit');
+Route::get('/user/edit/{id}', [UserController::class, 'UserEdit'])->name('user.edit');
 
-Route::get('/delete', [UserController::class, 'UserDelete'])->name('user.delete');
+Route::post('/user/update',[UserController::class,'UserUpdate'])->name('user.update');
+
+Route::get('/user/delete/{id}', [UserController::class, 'UserDelete'])->name('user.delete');
 
 
 });
